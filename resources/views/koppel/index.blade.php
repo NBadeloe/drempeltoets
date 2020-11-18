@@ -21,7 +21,7 @@
                                 <td>{{ $value->id }}</td>
                                 <td>{{ $value->naam }}</td>
                                 <td>{{ $value->geboortedatum }}</td>
-                               
+
 
 
                                 <!-- we will also add show, edit, and delete buttons -->
@@ -33,6 +33,7 @@
                                     <!-- show the shark (uses the show method found at GET /sharks/{id} -->
 
                                     <a class="btn btn-small btn-outline-success" href="{{ route('jongeren.edit', $value->id) }}">Bewerken</a>
+
                                     <form action="{{ route('jongeren.destroy', $value->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
