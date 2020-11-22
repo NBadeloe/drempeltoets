@@ -10,7 +10,8 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Omschrijving</th>
-                            <th scope="col"><a href="{{ route('activiteiten.create') }}" class="btn btn-outline-success">Toevoegen</a> </th>
+                            <th scope="col"><a href="{{ route('activiteiten.create') }}" class="btn btn-outline-success">Toevoegen</a>
+                                <a class="btn btn-outline-success" href="{{ route('export') }}">Export</a></th>
                         </tr>
                         </thead>
                         <tbody>

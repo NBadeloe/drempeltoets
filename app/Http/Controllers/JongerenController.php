@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\JongerenExport;
 use App\Jongeren;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
+use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\Console\Input\Input;
 use voku\helper\ASCII;
 
@@ -27,6 +29,10 @@ class JongerenController extends Controller
             ->with('jongeren', $jongeren);
     }
 
+    public function export()
+    {
+        return Excel::download(new JongerenExport(), 'Jongeren.xlsx');
+    }
     /**
      * Show the form for creating a new resource.
      *

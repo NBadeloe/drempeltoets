@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Activiteiten;
+use App\Exports\ActiviteitenExport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ActiviteitenController extends Controller
 {
@@ -17,6 +19,10 @@ class ActiviteitenController extends Controller
         $activiteiten= Activiteiten::all();
 
         return view('activiteiten.index')->with('activiteiten', $activiteiten);
+    }
+    public function export()
+    {
+        return Excel::download(new ActiviteitenExport(), 'Activiteiten.xlsx');
     }
 
     /**

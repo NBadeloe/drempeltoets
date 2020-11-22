@@ -14,7 +14,8 @@
                                 <th scope="col">Straat</th>
                                 <th scope="col">Postcode</th>
                                 <th scope="col">Woonplaats</th>
-                                <th scope="col"><a class=" btn btn-outline-success" href="{{ route('jongeren.create') }}">Toevoegen</a> </th>
+                                <th scope="col"><a class=" btn btn-outline-success" href="{{ route('jongeren.create') }}">Toevoegen</a>
+                                    <a class="btn btn-outline-success" href="{{ route('jongeren.export') }}">Export</a> </th>
                             </tr>
                             </thead>
                             <tbody>
